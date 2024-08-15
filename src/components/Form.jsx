@@ -1,7 +1,7 @@
-export default function Form() {
+export default function Form({ action }) {
   return (
     <div>
-      <input type="text"></input>
+      <input type="text" onInput={action}></input>
     </div>
   );
 }

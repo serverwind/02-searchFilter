@@ -1,5 +1,7 @@
 import { useState } from "react";
 import data from "../data/users.json";
+import Form from "./Form";
+import Users from "./Users";
 
 export default function Main() {
   let [users, setUsers] = useState([]);
@@ -12,35 +14,7 @@ export default function Main() {
   return (
     <div>
       <Form action={(e) => handleUsers(e.target.value)} />
-      <Output users={users} data={data} />
+      <Users users={users} data={data} />
     </div>
-  );
-}
-
-function Form({ action }) {
-  return (
-    <div>
-      <input type="text" onInput={action}></input>
-    </div>
-  );
-}
-
-function Output({ users, data }) {
-  if (users.length === 0) {
-    return (
-      <ul>
-        {data.map((user) => (
-          <li key={user.id}>{user.name}</li>
-        ))}
-      </ul>
-    );
-  }
-
-  return (
-    <ul>
-      {users.map((user) => (
-        <li key={user.id}>{user.name}</li>
-      ))}
-    </ul>
   );
 }
