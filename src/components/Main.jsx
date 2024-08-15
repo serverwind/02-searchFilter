@@ -4,6 +4,11 @@ import Form from "./Form";
 import Users from "./Users";
 
 export default function Main() {
+  /*
+   * 1. state for filtered users
+   * 2. handleUsers - filter users
+   *
+   */
   let [users, setUsers] = useState([]);
 
   function handleUsers(input) {

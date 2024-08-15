@@ -1,4 +1,10 @@
-export default function Output({ users, data }) {
+export default function Users({ users, data }) {
+  /*
+   * component linked to Main.jsx
+   * if user doesn't input anything it will return
+   * all users from users.json
+   *
+   * */
   if (users.length === 0) {
     return (
       <ul>
