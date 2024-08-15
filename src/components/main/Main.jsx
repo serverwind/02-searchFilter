@@ -1,5 +1,5 @@
 import { useState } from "react";
-import data from "../data/users.json";
+import data from "../../data/users.json";
 import Form from "./Form";
 import Users from "./Users";
 
@@ -20,9 +20,9 @@ export default function Main() {
   }
 
   return (
-    <div>
+    <main className="h-screen p-4 bg-gray-900 flex flex-col gap-4 items-center">
       <Form action={(e) => handleUsers(e.target.value)} />
       <Users users={users} data={data} />
-    </div>
+    </main>
   );
 }
