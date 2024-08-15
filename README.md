@@ -1,3 +1,15 @@
+# User Search Filter
+
+Project-2 in series of my React projects.
+
+Status: <b>finished</b>.
+
+## Overview
+
+Tech used: React, Tailwind, Vite.
+
+React: props, useState, JSX, components.
+
 ## Task: Develop a Search Filter App
 
 ### Description:
