@@ -1,22 +1,23 @@
-import { useState } from 'react';
-import data from '../data/users.json';
+import { useState } from "react";
+import data from "../data/users.json";
 
 export default function Main() {
   let [users, setUsers] = useState([]);
 
   function handleUsers(input) {
-    setUsers(data.filter((user) => user.name.includes(input)));
+    input = input.toLowerCase();
+    setUsers(data.filter((user) => user.name.toLowerCase().includes(input)));
   }
 
   return (
     <div>
-      <Form action={(e) => handleUsers(e.target.value)}/>
+      <Form action={(e) => handleUsers(e.target.value)} />
       <Output users={users} data={data} />
     </div>
   );
 }
 
-function Form({action}) {
+function Form({ action }) {
   return (
     <div>
       <input type="text" onInput={action}></input>
@@ -24,16 +25,15 @@ function Form({action}) {
   );
 }
 
-function Output({users, data}) {
+function Output({ users, data }) {
   if (users.length === 0) {
-  return (
-    <ul>
-      {data.map((user) => (
-        <li key={user.id}>{user.name}</li>
-      ))}
-    </ul>
-  );
-    
+    return (
+      <ul>
+        {data.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+    );
   }
 
   return (
