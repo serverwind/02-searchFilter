@@ -13,7 +13,10 @@ export default function Main() {
 
   function handleUsers(input) {
     input = input.toLowerCase();
-    setUsers(data.filter((user) => user.name.toLowerCase().includes(input)));
+    /* I know, it's hard to read but I have to do it :)
+     * if input length > 2 - apply .filter,
+     * put user.name to lowercase and check if includes input.*/
+    input.length > 2 ? setUsers(data.filter((user) => user.name.toLowerCase().includes(input))) : setUsers([]);
   }
 
   return (
